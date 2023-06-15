@@ -1,0 +1,55 @@
+@import "../../css-config/mixins.scss";
+
+// .header{
+//     width: 100%;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     background-color: var(--first-color);
+//     color: #fff;
+//     z-index: 100;
+// }
+
+.nav{
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 1.25rem;
+    background-color: black;
+
+    .nav-logo{
+        color: #fff;
+        text-align: center;
+    }
+    .nav-list {
+        display: flex;
+        gap: 1rem;
+        .list-item{
+            text-align: center;
+            font-size: 1.35rem;
+            .nav-link{
+                padding: 0.5rem;
+                color: #fff;
+            }
+            .nav-link:hover{
+                font-weight: bold;
+            }
+        }
+    }
+
+    .toggle-bar{
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+        display: none;
+        cursor: pointer;
+    }
+    
+    .extras {
+        color: white;
+        display: flex;
+        gap: 2rem;
+        cursor: pointer;
+    }
+}
