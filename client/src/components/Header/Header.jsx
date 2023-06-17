@@ -3,11 +3,21 @@ import { BiSearchAlt } from "react-icons/bi";
 import { BsHeart } from "react-icons/bs";
 import { BsCartFill } from "react-icons/bs";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { useEffect } from "react";
 
 import "./Header.scss";
 
 
 const Header = () => {
+
+    useEffect(()=>{
+        const navbar=document.getElementById("nav_toggle");
+        navbar.addEventListener("click",()=>{
+            const navmenu=document.getElementById("nav-menu");
+            navmenu.classList.toggle("show");
+        })
+    })
+
     return (
         <nav className="nav">
             <div className="toggle-bar" id="nav_toggle">
@@ -26,10 +36,11 @@ const Header = () => {
             </div>
             <div className="extras">
                 <BiSearchAlt />
-                <BsCartFill />
                 <span className="cart">
-                    <BsHeart />
+                    <BsCartFill />
+                    <span>1</span>
                 </span>
+                <BsHeart />
             </div>
         </nav>
     );
