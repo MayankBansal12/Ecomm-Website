@@ -1,1 +1,91 @@
 @import "../../css-config/mixins.scss";
+
+
+footer{
+    background-color: var(--second-color);
+    padding-block: 3rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    @include md{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    h3{
+        color: var(--first-color);
+        padding-bottom: 1rem;
+    }
+    p{
+        color: white;
+    }
+    ul li{
+        list-style: none;
+        color: white;
+        margin-bottom: 0.65rem;
+        a{
+            color: white;
+        }
+    }
+
+    .company-info {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        @include md{
+            width: 50%;
+        }
+        @include sm{
+            width: 90%;
+        }
+    }
+    .email{
+        color: rgb(218, 203, 203);
+    }
+}
+
+
+
+/* Sub Footer */
+#sub-footer{
+    background-color: var(--first-color);
+    padding: 1% 10% 0.5%;
+
+    @include sm{
+        padding-inline: 0;
+        gap: 5%;
+    }
+
+    .copy-text{
+        color: white;
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 0.9rem;
+    }
+    ul {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 1.2rem;
+        gap: 2%;
+        flex-wrap: wrap;
+        justify-content: center;
+        li{
+            list-style: none;
+            a{
+                text-decoration: none;
+                transition: all 0.2s;
+            }
+            a:hover{
+                color: var(--second-color);
+                cursor: pointer;
+            }
+        }
+    }
+}

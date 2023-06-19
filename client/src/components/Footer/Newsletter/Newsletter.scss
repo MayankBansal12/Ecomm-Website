@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 
     .small-text, .big-text {
         display: block;
@@ -19,14 +20,47 @@
     .small-text{
         font-size: 1.5rem;
         margin-block: 0.9rem;
+        font-weight: bold;
+
+        @include md{
+            font-size: 1.25rem;
+        }
+        @include xsm{
+            font-size: 1rem;
+        }
     }
     .big-text{
         font-size: 2rem;
+        line-height: 1.1;
+
+        @include md{
+            font-size: 1.7rem;
+        }
+        @include sm{
+            font-size: 1.45rem;
+        }
+        @include xsm{
+            font-size: 1.3rem;
+        }
+    }
+    .text{
+        @include xsm{
+            text-align: center;
+        }
     }
     .social-icons {
         display: flex;
         gap: 1rem;
         margin-top: 0.5rem;
+
+        .icon{
+            color: var(--first-color);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .icon:hover{
+            color: var(--second-color);
+        }
     }
 
     .form {
@@ -34,18 +68,25 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
 
         input{
-            width: 40vw;
+            width: 45vw;
             height: auto;
             padding: 0.2rem 0.5rem;
             font-size: 1.1rem;
             border: none;
             outline: none;
+
+            @include md{
+                width: 70vw;
+            }
+            @include xsm{
+                width: 85vw;
+            }
         }
         button.btn {
-            width: 30%;
+            width: 20vw;
             text-align: center;
             border-radius: 10px;
             border: none;
@@ -56,11 +97,20 @@
             padding: 0.75rem;
             transition: all 0.3s;
             box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.3);
+
+            @include sm{
+                width: 30vw;
+                padding: 0.5rem;
+            }
+            @include xsm{
+                width: 45vw;
+            }
         }
         .btn:hover{
             background-color: var(--second-color);
             transform: scale(1.1);
             cursor: pointer;
         }
+
     }
 }
