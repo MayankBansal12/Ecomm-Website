@@ -17,6 +17,9 @@
     justify-content: space-around;
     font-weight: bold;
     font-size: 1.25rem;
+    position: fixed;
+    width: 100%;
+    transition: all 0.5s;
 
     .nav-logo{
         color: #fff;
@@ -65,7 +68,7 @@
             position: fixed;
             top: 3.5rem;
             left: -100%;
-            background-color: #291111;
+            background-color: #232323f3;
             height: 100vh;
             width: 40%;
             padding: 5rem 2rem;
@@ -111,7 +114,15 @@
                 height: 20px;
                 font-size: 1rem;
                 text-align: center;
+                @include md{
+                    background-color: var(--second-color);
+                }
             }
         }
     }
+}
+
+.blur{
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);  
 }

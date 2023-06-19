@@ -16,6 +16,17 @@ const Header = () => {
             const navmenu=document.getElementById("nav-menu");
             navmenu.classList.toggle("show");
         })
+        window.addEventListener("scroll",()=>{
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            let navEl=document.querySelector(".nav");
+            if (scrollTop === 0) {
+                // User is at the top of the page, remove blur class
+                navEl.classList.remove('blur');
+            } else {
+                // User has scrolled, add blur class
+                navEl.classList.add('blur');
+            }
+        });        
     })
 
     return (
