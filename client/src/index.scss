@@ -9,6 +9,27 @@
     --big-size:5rem;
     --small-size: 0.75rem;
 }
+/* Styles for the scrollbar track */
+::-webkit-scrollbar-track {
+    background-color: #e16767;
+}
+
+/* Styles for the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #4c3232;
+    border-radius: 5px;
+}
+
+/* Styles for the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #4a4242;
+}
+
+/* Styles for the scrollbar corner */
+::-webkit-scrollbar-corner {
+    background-color: #e16767;
+}
+  
 * {
     margin: 0;
     padding: 0;
