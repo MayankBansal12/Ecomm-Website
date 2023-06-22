@@ -1,11 +1,8 @@
 import "./Category.scss";
 
-import Products from "../Products/Products";
-
 const Category = () => {
-    return <div className="category-section">
+    return <div>
         Category
-        <Products />
     </div>;
 };
 
