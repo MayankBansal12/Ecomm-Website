@@ -10,7 +10,7 @@ const Home = () => {
             <div className="main-container">
                 <div className="layout">
                     <Category />
-                    <Products />
+                    <Products heading="Popular Products" />
                 </div>
             </div>
         </div>
