@@ -19,12 +19,12 @@ const Header = () => {
         window.addEventListener("scroll",()=>{
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             let navEl=document.querySelector(".nav");
-            if (scrollTop === 0) {
-                // User is at the top of the page, remove blur class
-                navEl.classList.remove('blur');
-            } else {
-                // User has scrolled, add blur class
-                navEl.classList.add('blur');
+            if (scrollTop !== 0) {
+                // User is not at the top of the page, add filter class
+                navEl.classList.add('filter');
+            }else{
+                // User is at the top of the page, remove filter class
+                navEl.classList.remove('filter');
             }
         });        
     })
@@ -40,8 +40,8 @@ const Header = () => {
             <div className="menu" id="nav-menu">
                 <ul className="nav-list">
                     <li className="list-item"><Link to="" className="nav-link">Home</Link></li>
-                    <li className="list-item"><Link to="" className="nav-link">Woman</Link></li>
-                    <li className="list-item"><Link to="" className="nav-link">Man</Link></li>
+                    <li className="list-item"><Link to="" className="nav-link">Shop</Link></li>
+                    <li className="list-item"><Link to="" className="nav-link">Categories</Link></li>
                     <li className="list-item"><Link to="" className="nav-link">About</Link></li>
                 </ul>
             </div>

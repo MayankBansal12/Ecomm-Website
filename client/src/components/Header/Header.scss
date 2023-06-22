@@ -6,9 +6,9 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-weight: bold;
     font-size: 1.25rem;
     position: fixed;
+    top: 0;
     z-index: 100;
     width: 100%;
     transition: all 0.5s;
@@ -16,6 +16,7 @@
     .nav-logo{
         color: #fff;
         text-align: center;
+        font-weight: bolder;
     }
     .nav-list {
         display: flex;
@@ -31,9 +32,10 @@
             .nav-link{
                 padding: 0.5rem;
                 color: #fff;
+                transition: all 0.3s;
             }
             .nav-link:hover{
-                font-weight: bold;
+                color: var(--second-color);
             }
         }
     }
@@ -83,6 +85,7 @@
         gap: 2rem;
         align-items: center;
         cursor: pointer;
+
         @include sm{
             gap: 1rem;
             position: absolute;
@@ -92,6 +95,7 @@
         @include xsm{
             right: 0.5rem;
         }
+        
         .cart{
             display: flex;
             align-items: center;
@@ -114,7 +118,11 @@
     }
 }
 
-.blur{
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);  
+.filter{
+    background-color: var(--first-color);
+    .extras .cart{
+        span{
+            background-color: var(--second-color);
+        }
+    }
 }
