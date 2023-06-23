@@ -11,14 +11,14 @@ const Footer = () => {
         <div>
             <footer>
                 <div className="company-info">
-                    <div class="footer-menu">
+                    <div className="footer-menu">
                         <h3>About</h3>
                         <p>
                             Your shopping palace and one stop solution to your needs and wants. Shop now and in case of any queries, write to us at
                             &nbsp;<Link className="email" to="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBptJQGXRhtBDKQrMSSBQSTpKJHXQDBCbfGrtBKSLFlmxgvsVkCZMGvnqcbrkMWtgDgcLrN" target="_blank">mayankbansal125@gmail.com</Link>
                         </p>
                     </div>
-                    <div class="footer-menu">
+                    <div className="footer-menu">
                         <h3>Contact</h3>
                         <ul>
                             <li>99/A, Apartment Name, __ Colony, Near Area, Delhi-200010</li>
@@ -27,7 +27,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div class="footer-menu">
+                <div className="footer-menu">
                     <h3>Categories</h3>
                     <ul>
                         <li><Link to="#">SmartPhones</Link></li>
@@ -40,7 +40,7 @@ const Footer = () => {
                         <li><Link to="#">Others</Link></li>
                     </ul>
                 </div>
-                <div class="footer-menu">
+                <div className="footer-menu">
                     <h3>Overview</h3>
                     <ul>
                         <li><Link to="#">Your Orders</Link></li>

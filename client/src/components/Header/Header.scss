@@ -9,7 +9,7 @@
     font-size: 1.25rem;
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 1;
     width: 100%;
     transition: all 0.5s;
 
@@ -32,10 +32,10 @@
             .nav-link{
                 padding: 0.5rem;
                 color: #fff;
-                transition: all 0.3s;
+                transition: all 0.5s;
             }
             .nav-link:hover{
-                color: var(--second-color);
+                font-weight: bold;
             }
         }
     }

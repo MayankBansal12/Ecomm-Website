@@ -77,10 +77,10 @@ footer{
             list-style: none;
             a{
                 text-decoration: none;
-                transition: all 0.2s;
+                transition: all 0.5s;
             }
             a:hover{
-                color: var(--second-color);
+                font-weight: bold;
                 cursor: pointer;
             }
         }
