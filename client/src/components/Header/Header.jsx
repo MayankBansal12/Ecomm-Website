@@ -7,10 +7,12 @@ import { useEffect, useState } from "react";
 
 import "./Header.scss";
 import Cart from "../Cart/Cart";
+import Search from "./Search/Search";
 
 const Header = () => {
-
     const [showCart, setShowCart]=useState(false);
+    const [showSearch, setShowSearch]=useState(false);
+
     useEffect(()=>{
         const navbar=document.getElementById("nav_toggle");
         navbar.addEventListener("click",()=>{
@@ -48,7 +50,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="extras">
-                    <BiSearchAlt />
+                    <BiSearchAlt onClick={()=>setShowSearch(true)} />
                     <span className="cart" onClick={()=>setShowCart(true)} >
                         <BsCartFill />
                         <span>1</span>
@@ -57,6 +59,7 @@ const Header = () => {
                 </div>
             </nav>
             {showCart && <Cart setShowCart={setShowCart} />}
+            {showSearch && <Search setShowSearch={setShowSearch} /> }
         </>
     );
 };
