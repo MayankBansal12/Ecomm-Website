@@ -21,6 +21,8 @@
         width: 350px;
         height: 100%;
         background-color: white;
+        display: flex;
+        flex-direction: column;
         z-index: 1;
         @include xsm{
             width: 100%;
