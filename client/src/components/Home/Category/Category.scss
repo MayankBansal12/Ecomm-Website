@@ -15,6 +15,7 @@
         justify-content: center;
 
         .category{
+            position: relative;
             width: calc(25% - 1rem);
             background-color: var(--first-color);
             overflow: hidden;
@@ -23,16 +24,30 @@
             @include md{
                 width: calc(50% - 1rem);
             }
-
+            span{
+                position: absolute;
+                font-size: 1.5rem;
+                font-weight: bold;
+                z-index: 5;
+                color: var(--highlight-color);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 100%;
+                line-height: 1.25;
+                display: flex;
+                justify-content: center;
+            }
             img{
                 width: 100%;
                 display: block;
+                opacity: 0.5;
                 transition: all 0.3s ease;
+
                 &:hover{
-                        transform: scale(1.2);
+                    transform: scale(1.2);
                 }
             }
-
         }
     }
 }
