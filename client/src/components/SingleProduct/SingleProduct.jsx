@@ -1,30 +1,48 @@
 import "./SingleProduct.scss";
-import prod from "../../assets/products/watch-prod-3.webp";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { BsCartFill } from "react-icons/bs";
+import { useParams } from "react-router-dom";
+import useFetch from "../../hooks/useFetchApi";
+import { useState } from "react";
 
 const SingleProduct = () => {
+    const [quantity, setquantity]=useState(1);
+    const {id}= useParams();
+    const {data}=useFetch(`/api/products?populate=*&filters[id]=${id}`);
+    const product=data?.data[0]?.attributes;
+
+    const increase=()=>{
+        setquantity((prev)=>prev+1);
+    }
+    const decrease=()=>{
+        setquantity((prev)=>{
+            if(prev!==1)
+                prev=prev-1;
+            return prev;
+        });
+    }
+
     return (
         <div className="single-product-content">
             <div className="layout">
                 <div className="single-product-page">
                     <div className="left">
-                        <img src={prod} alt="product" />
+                        <img src={process.env.REACT_APP_SERVER_URL+product?.images.data[0].attributes.url} alt="product" />
                     </div>
                     <div className="right">
-                        <span className="name">Product Name</span>
-                        <span className="price">Price</span>
-                        <span className="desc">Product Description</span>
+                        <span className="name">{product?.title}</span>
+                        <span className="price">&#8377; {product?.price}</span>
+                        <span className="desc">{product?.desc}</span>
 
                         <div className="cart-buttons">
                             <div className="quantity-btn">
-                                <span>-</span>
-                                <span>2</span>
-                                <span>+</span>
+                                <span onClick={()=>decrease()}>-</span>
+                                <span>{quantity}</span>
+                                <span onClick={()=>increase()}>+</span>
                             </div>
                             <button className="cart-btn">
                                 <BsCartFill />
@@ -37,7 +55,7 @@ const SingleProduct = () => {
                         <div className="info-item">
                             <div className="text-bold">
                                 Category:
-                                <span>Watches</span>
+                                <span>{product?.categories.data[0].attributes.title}</span>
                             </div>
                             <div className="text-bold">
                                 Share:
@@ -51,7 +69,7 @@ const SingleProduct = () => {
                         </div>
                     </div>
                 </div>
-                <RelatedProducts />
+                <RelatedProducts id={id} categoryId={product?.categories.data[0].id} />
             </div>
         </div>
     );
