@@ -19,6 +19,7 @@
             width: calc(25% - 1rem);
             background-color: var(--first-color);
             overflow: hidden;
+            border-radius: 5px;
             cursor: pointer;
 
             @include md{

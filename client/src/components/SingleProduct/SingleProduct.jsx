@@ -7,19 +7,21 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { BsCartFill } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetchApi";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Context } from "../../utils/context";
 
 const SingleProduct = () => {
-    const [quantity, setquantity]=useState(1);
+    const [quantity, setQuantity]=useState(1);
     const {id}= useParams();
     const {data}=useFetch(`/api/products?populate=*&filters[id]=${id}`);
     const product=data?.data[0]?.attributes;
+    const { addToCart, removeCart, productQuantity }=useContext(Context);
 
     const increase=()=>{
-        setquantity((prev)=>prev+1);
+        setQuantity((prev)=>prev+1);
     }
     const decrease=()=>{
-        setquantity((prev)=>{
+        setQuantity((prev)=>{
             if(prev!==1)
                 prev=prev-1;
             return prev;
@@ -44,7 +46,10 @@ const SingleProduct = () => {
                                 <span>{quantity}</span>
                                 <span onClick={()=>increase()}>+</span>
                             </div>
-                            <button className="cart-btn">
+                            <button className="cart-btn" onClick={()=>{
+                                addToCart(data.data[0],quantity);
+                                setQuantity(1);
+                            }}>
                                 <BsCartFill />
                                 ADD TO CART
                             </button>

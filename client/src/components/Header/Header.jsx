@@ -3,15 +3,17 @@ import { BiSearchAlt } from "react-icons/bi";
 import { BsHeart } from "react-icons/bs";
 import { BsCartFill } from "react-icons/bs";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import "./Header.scss";
 import Cart from "../Cart/Cart";
 import Search from "./Search/Search";
+import { Context } from "../../utils/context";
 
 const Header = () => {
     const [showCart, setShowCart]=useState(false);
     const [showSearch, setShowSearch]=useState(false);
+    const { count }=useContext(Context);
 
     useEffect(()=>{
         const navbar=document.getElementById("nav_toggle");
@@ -53,7 +55,7 @@ const Header = () => {
                     <BiSearchAlt onClick={()=>setShowSearch(true)} />
                     <span className="cart" onClick={()=>setShowCart(true)} >
                         <BsCartFill />
-                        <span>1</span>
+                        { !!count && <span>{count}</span>}
                     </span>
                     <BsHeart />
                 </div>

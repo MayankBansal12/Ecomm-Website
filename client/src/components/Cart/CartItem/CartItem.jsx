@@ -1,29 +1,35 @@
 import "./CartItem.scss";
-import prod from "../../../assets/products/earbuds-prod-4.webp"
+
 import CloseIcon from '@mui/icons-material/Close';
+import { Context } from "../../../utils/context";
+import { useContext } from "react";
 
 const CartItem = () => {
+    const {cartItem, addToCart, removeCart, productQuantity}=useContext(Context);
+
     return (
         <div className="cart-products">
-            <div className="cart-product">
-                <div className="img-container">
-                    <img src={prod} alt="product" />
-                </div>
-                <div className="product-details">
-                    <span className="name">Product Name</span>
-                    <CloseIcon className="close-btn" />
-                    <div className="quantity-btn">
-                        <span>-</span>
-                        <span>2</span>
-                        <span>+</span>
+            { cartItem.map((item)=>(
+                <div className="cart-product" key={item.id}>
+                    <div className="img-container">
+                        <img src={process.env.REACT_APP_SERVER_URL+item.attributes.images.data[0].attributes.url} alt="product" />
                     </div>
-                    <div className="text">
-                        <span>3</span>
-                        <span>x</span>
-                        <span className="highlight">&#8377;3500</span>
+                    <div className="product-details">
+                        <span className="name">{item.attributes.title}</span>
+                        <CloseIcon className="close-btn" onClick={()=>removeCart(item)} />
+                        <div className="quantity-btn">
+                            <span onClick={()=>productQuantity("decrease",item)}>-</span>
+                            <span>{item.attributes.quantity}</span>
+                            <span onClick={()=>productQuantity("increase",item)}>+</span>
+                        </div>
+                        <div className="text">
+                            <span>{item.attributes.quantity} x</span>
+                            <span>{item.attributes.price} =</span>
+                            <span className="highlight">&#8377;{item.attributes.price * item.attributes.quantity}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )) }
         </div>
     )
 };
