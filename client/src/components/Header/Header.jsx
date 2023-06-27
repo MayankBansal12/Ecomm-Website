@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
-import { BsHeart } from "react-icons/bs";
 import { BsCartFill } from "react-icons/bs";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { useContext, useEffect, useState } from "react";
@@ -16,11 +15,6 @@ const Header = () => {
     const { count }=useContext(Context);
 
     useEffect(()=>{
-        const navbar=document.getElementById("nav_toggle");
-        navbar.addEventListener("click",()=>{
-            const navmenu=document.getElementById("nav-menu");
-            navmenu.classList.toggle("show");
-        })
         window.addEventListener("scroll",()=>{
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             let navEl=document.querySelector(".nav");
@@ -35,10 +29,10 @@ const Header = () => {
     })
     const showMenu=()=>{
         const menu=document.querySelector(".menu");
-        if(menu.classList.contains("show")){
-            menu.classList.remove("show");
+        if(menu?.classList.contains("show")){
+            menu?.classList.remove("show");
         }else{
-            menu.classList.add("show");
+            menu?.classList.add("show");
         }
     }
 
@@ -46,7 +40,7 @@ const Header = () => {
         <>
             <nav className="nav">
                 <div className="toggle-bar" id="nav_toggle">
-                    <HiOutlineMenuAlt2 onClick={()=>showMenu()} />
+                    <HiOutlineMenuAlt2 onClick={showMenu()} />
                 </div>
                 <div>
                     <Link to="" className="nav-logo">MangoZone</Link>
@@ -65,7 +59,7 @@ const Header = () => {
                         <BsCartFill />
                         { !!count && <span>{count}</span>}
                     </span>
-                    <BsHeart />
+                    {/* <button className="btn">Log In</button> */}
                 </div>
             </nav>
             {showCart && <Cart setShowCart={setShowCart} />}

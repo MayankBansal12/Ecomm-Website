@@ -3,20 +3,26 @@
 
 .nav{
     height: 3.5rem;
+    opacity: 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
     font-size: 1.25rem;
     position: fixed;
     top: 0;
+    background-color: var(--first-color);
     z-index: 2;
     width: 100%;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.7);
     transition: all 0.5s;
 
     .nav-logo{
         color: #fff;
         text-align: center;
         font-weight: bolder;
+        @include xsm{
+            padding-right: 8rem;
+        }
     }
     .nav-list {
         display: flex;
@@ -115,11 +121,19 @@
                 }
             }
         }
+        button.btn {
+            padding: 2px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button.btn:hover {
+            transform: scale(1.05);
+        }
     }
 }
 
 .filter{
-    background-color: var(--first-color);
+    opacity: 1;
     .extras .cart{
         span{
             background-color: var(--second-color);

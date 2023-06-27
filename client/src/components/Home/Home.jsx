@@ -4,7 +4,6 @@ import Category from "./Category/Category";
 import Products from "../Products/Products";
 import { useContext, useEffect } from "react";
 import { apiFetchData } from "../../utils/api";
-
 import { Context } from "../../utils/context";
 
 const Home = () => {

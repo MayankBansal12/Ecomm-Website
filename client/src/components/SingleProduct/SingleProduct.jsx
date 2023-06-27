@@ -15,7 +15,7 @@ const SingleProduct = () => {
     const {id}= useParams();
     const {data}=useFetch(`/api/products?populate=*&filters[id]=${id}`);
     const product=data?.data[0]?.attributes;
-    const { addToCart, removeCart, productQuantity }=useContext(Context);
+    const { addToCart }=useContext(Context);
 
     const increase=()=>{
         setQuantity((prev)=>prev+1);

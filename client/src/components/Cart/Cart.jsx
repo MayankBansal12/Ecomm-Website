@@ -7,11 +7,10 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { loadStripe } from "@stripe/stripe-js";
 import { makePayment } from "../../utils/api";
-
+import { Link } from "react-router-dom";
 
 const Cart = ({setShowCart}) => {
     const {cartTotal, cartItem}=useContext(Context);
-
     const stripePromise=loadStripe(process.env.REACT_APP_PUBLISH_KEY);
     const handlePayment=async()=>{
         try {
@@ -42,7 +41,7 @@ const Cart = ({setShowCart}) => {
                 { !cartItem.length && <div className="empty-cart">
                     <AddShoppingCartIcon />
                     <span>Your cart is looking empty. Go Shop now!</span>
-                    <button className="shop-btn">Shop Now</button>
+                    <Link to="/category/6" className="shop-btn" onClick={()=>setShowCart(false)}>Shop Now</Link>
                 </div> }
 
                 { cartItem.length && <>
