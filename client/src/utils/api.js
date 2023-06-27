@@ -16,3 +16,10 @@ export const apiFetchData=async(url)=>{
         return error;
       }
 }
+
+export const makePayment=axios.create({
+  baseURL: process.env.REACT_APP_SERVER_URL,
+  headers: {
+    Authorization: "bearer "+ process.env.REACT_APP_API_KEY,
+  }
+});

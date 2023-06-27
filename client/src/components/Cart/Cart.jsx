@@ -5,11 +5,28 @@ import CartItem from "./CartItem/CartItem";
 
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import CancelIcon from '@mui/icons-material/Cancel';
-
+import { loadStripe } from "@stripe/stripe-js";
+import { makePayment } from "../../utils/api";
 
 
 const Cart = ({setShowCart}) => {
     const {cartTotal, cartItem}=useContext(Context);
+
+    const stripePromise=loadStripe(process.env.REACT_APP_PUBLISH_KEY);
+    const handlePayment=async()=>{
+        try {
+            const stripe=await stripePromise;
+            const res=await makePayment.post("/api/orders",{
+                products: cartItem,
+            })
+            await stripe.redirectToCheckout({
+                sessionId: res.data.stripeSession.id
+            });    
+        } catch (error) {
+            console.log(error);
+        }   
+    }
+
     return (
         <div className="cart-layout">
             <div className="opac-layer"></div>
@@ -36,7 +53,7 @@ const Cart = ({setShowCart}) => {
                                 <span className="text total">&#8377; {cartTotal}</span>
                             </div>
                             <div className="btn">
-                                <button className="checkout-btn">Checkout</button>
+                                <button className="checkout-btn" onClick={()=>handlePayment()}>Checkout</button>
                             </div>
                         </div>
                     </> }

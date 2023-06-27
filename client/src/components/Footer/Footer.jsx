@@ -22,7 +22,7 @@ const Footer = () => {
                         <h3>Contact</h3>
                         <ul>
                             <li>99/A, Apartment Name, __ Colony, Near Area, Delhi-200010</li>
-                            <li>8090626963</li>
+                            <li>809062696356</li>
                             <li>mayankbansal125@gmail.com</li>
                         </ul>
                     </div>
