@@ -57,7 +57,7 @@
         }
         .search-results{
             overflow: auto;
-            height: calc(100vh - 5rem);
+            height: calc(100vh - 10rem);
             margin: 20px 0;
 
             .search-result-item{
@@ -65,7 +65,8 @@
                 align-items: center;
                 padding: 0.8rem;
                 gap: 20px;
-                transition: all 0.2s; 
+                cursor: pointer;
+                transition: all 0.2s;
                 border-bottom: 1px solid rgba($color: white, $alpha: 0.4);       
                 
                 .img-container{

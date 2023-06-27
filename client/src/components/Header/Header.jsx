@@ -33,12 +33,20 @@ const Header = () => {
             }
         });        
     })
+    const showMenu=()=>{
+        const menu=document.querySelector(".menu");
+        if(menu.classList.contains("show")){
+            menu.classList.remove("show");
+        }else{
+            menu.classList.add("show");
+        }
+    }
 
     return (
         <>
             <nav className="nav">
                 <div className="toggle-bar" id="nav_toggle">
-                    <HiOutlineMenuAlt2 />
+                    <HiOutlineMenuAlt2 onClick={()=>showMenu()} />
                 </div>
                 <div>
                     <Link to="" className="nav-logo">MangoZone</Link>

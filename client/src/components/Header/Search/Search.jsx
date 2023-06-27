@@ -1,13 +1,28 @@
 import "./Search.scss";
 
 import CancelIcon from '@mui/icons-material/Cancel';
-import img from "../../../assets/products/speaker-prod-2.webp";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useFetch from "../../../hooks/useFetchApi"
 
 const Search = ({setShowSearch}) => {
+    const [query,setQuery]=useState("");
+    const navigate=useNavigate();
+
+    const onTyping=(event)=>{
+        setQuery(event.target.value);
+    }
+    
+    let {data}=useFetch(`/api/products?populate=*&filters[title][$contains]=${query}`);
+    if(!query.length){
+        data=null;
+    }
+    console.log(data);
+
     return (
         <div className="search">
             <div className="form">
-                <input type="text" autoFocus placeholder="Search for products" />
+                <input type="text" autoFocus placeholder="Search for products" onChange={onTyping} />
                 <span className="close-btn" onClick={()=>setShowSearch(false)}>
                     <CancelIcon />
                     <span className="text">Close</span>
@@ -15,33 +30,20 @@ const Search = ({setShowSearch}) => {
             </div>
             <div className="search-result-content">
                 <div className="search-results">
-                    <div className="search-result-item">
-                        <div className="img-container">
-                            <img src={img} alt="product" />
+                    {data?.data?.map((item)=>(
+                        <div key={item.id} className="search-result-item" onClick={()=>{
+                            navigate("/product/"+item.id);
+                            setShowSearch(false);
+                        }}>
+                            <div className="img-container">
+                                <img src={process.env.REACT_APP_SERVER_URL+item.attributes.images.data[0].attributes.url} alt="product" />
+                            </div>
+                            <div className="product-details">
+                                <div className="name">{item.attributes.title}</div>
+                                <div className="desc">{item.attributes.desc}</div>
+                            </div>
                         </div>
-                        <div className="product-details">
-                            <div className="name">Product Name</div>
-                            <div className="desc">Product Description</div>
-                        </div>
-                    </div>
-                    <div className="search-result-item">
-                        <div className="img-container">
-                            <img src={img} alt="product" />
-                        </div>
-                        <div className="product-details">
-                            <div className="name">Product Name</div>
-                            <div className="desc">Product Description</div>
-                        </div>
-                    </div>
-                    <div className="search-result-item">
-                        <div className="img-container">
-                            <img src={img} alt="product" />
-                        </div>
-                        <div className="product-details">
-                            <div className="name">Product Name</div>
-                            <div className="desc">Product Description</div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>
