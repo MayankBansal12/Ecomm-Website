@@ -30,7 +30,7 @@ const Cart = ({setShowCart}) => {
 
     return (
         <div className="cart-layout">
-            <div className="opac-layer"></div>
+            <div className="opac-layer" onClick={()=>setShowCart(false)}></div>
             <div className="cart-content">
                 <div className="cart-header">
                     <span className="heading">Shopping Cart</span>

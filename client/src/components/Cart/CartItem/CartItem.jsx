@@ -1,5 +1,6 @@
 import "./CartItem.scss";
 
+import { toast } from 'react-toastify';
 import CloseIcon from '@mui/icons-material/Close';
 import { Context } from "../../../utils/context";
 import { useContext } from "react";
@@ -16,7 +17,11 @@ const CartItem = () => {
                     </div>
                     <div className="product-details">
                         <span className="name">{item.attributes.title}</span>
-                        <CloseIcon className="close-btn" onClick={()=>removeCart(item)} />
+                        <CloseIcon className="close-btn" onClick={()=>{
+                            removeCart(item)
+                            // Display notification
+                            toast.error('Item removed from cart!');
+                        }} />
                         <div className="quantity-btn">
                             <span onClick={()=>productQuantity("decrease",item)}>-</span>
                             <span>{item.attributes.quantity}</span>

@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetchApi";
 import { useContext, useState } from "react";
 import { Context } from "../../utils/context";
+import { toast } from 'react-toastify';
 
 const SingleProduct = () => {
     const [quantity, setQuantity]=useState(1);
@@ -52,6 +53,8 @@ const SingleProduct = () => {
                             <button className="cart-btn" onClick={()=>{
                                 addToCart(data.data[0],quantity);
                                 setQuantity(1);
+                                // Display success notification
+                                toast.success('Item added to cart!');
                             }}>
                                 <BsCartFill />
                                 ADD TO CART

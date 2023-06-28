@@ -3,6 +3,7 @@ import "./Checkout.scss";
 import OrderSuccessPage from "./OrderSummary/OrderSummary";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../utils/context";
+import { toast } from 'react-toastify';
 
 const CheckoutPage = () => {
   const {cartItem}=useContext(Context);
@@ -37,6 +38,8 @@ const CheckoutPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     showPage(true);
+    // Display success notification
+    toast.success('Order Placed Successfully!');
   };
 
   return successPage ? (
