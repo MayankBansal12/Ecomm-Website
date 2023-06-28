@@ -13,7 +13,7 @@ import { Context } from "../../utils/context";
 const SingleProduct = () => {
     const [quantity, setQuantity]=useState(1);
     const {id}= useParams();
-    const {data}=useFetch(`/api/products?populate=*&filters[id]=${id}`);
+    const {loading,data}=useFetch(`/api/products?populate=*&filters[id]=${id}`);
     const product=data?.data[0]?.attributes;
     const { addToCart }=useContext(Context);
 
@@ -28,6 +28,9 @@ const SingleProduct = () => {
         });
     }
 
+    if(loading){
+        return <div className="loading">Loading...</div>;
+    }
     return (
         <div className="single-product-content">
             <div className="layout">

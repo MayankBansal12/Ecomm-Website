@@ -5,8 +5,11 @@ import useFetch from "../../hooks/useFetchApi";
 
 const Category = () => {
   const { id } = useParams();
-  const {data}=useFetch(`/api/products?populate=*&filters[categories][id]=${id}`);
+  const {loading, data}=useFetch(`/api/products?populate=*&filters[categories][id]=${id}`);
 
+  if(loading){
+    return <div className="loading">Loading...</div>;
+  }
   return (
     <div className="category-main-content">
       <div className="layout">

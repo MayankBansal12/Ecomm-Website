@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from "react";
 import "./Checkout.scss";
-import { useNavigate } from 'react-router-dom';
+import OrderSuccessPage from "./OrderSummary/OrderSummary";
+import { useNavigate } from "react-router-dom";
+import { Context } from "../../utils/context";
 
 const CheckoutPage = () => {
+  const {cartItem}=useContext(Context);
+  const navigate=useNavigate();
+
+  useEffect(()=>{
+    if(cartItem.length===0){
+      navigate("/");
+    }
+  },[cartItem,navigate]);
+
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    address: '',
-    // city: '',
-    // state: '',
-    // zip: '',
-    cardNumber: '',
-    cardName: '',
-    cardExpiry: '',
-    cardCVC: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    address: "",
+    cardNumber: "",
+    cardName: "",
+    cardExpiry: "",
+    cardCVC: "",
   });
+  const [successPage, showPage] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,19 +33,21 @@ const CheckoutPage = () => {
       [name]: value,
     }));
   };
-  
-  const navigate=useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Process the form data, handle payment, and submit the order
-    console.log(formData);
-    navigate("/checkout/success");
+    showPage(true);
   };
 
-  return (
+  return successPage ? (
+    <OrderSuccessPage cartItem={cartItem} />
+  ) : (
     <div className="checkout-section">
       <h1>Checkout</h1>
-      <span className="note">Fill out all the details correctly and place order to confirm your purchase.</span>
+      <span className="note">
+        Fill out all the details correctly and place order to confirm your
+        purchase.
+      </span>
       <form onSubmit={handleSubmit}>
         <div className="info-container">
           <div className="billing-info">
