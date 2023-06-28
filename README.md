@@ -38,41 +38,54 @@ Make sure to start both the client and API servers concurrently to enable full f
 
 
 ## Screenshots/Demo
-HomePage for the website 
+
+- **HomePage for the website**
+  
 ![navbar](./ScreenShots/Navbar.png)
 ![navbar2](./ScreenShots/Nav2.png)
 
-Category Section: You can checkout products from 7 different categories 
+- **Category Section: You can checkout products from 7 different categories**
+  
 ![category](./ScreenShots/Categories.png)
 
-By clicking on category, you will land on specific category page displaying all products under it
+- **By clicking on category, you will land on specific category page displaying all products under it**
+
 ![Single Category Page](./ScreenShots/Single%20Category.png)
 
-Popular Products under Category here
+- **Popular Products under Category here**
+  
 ![products](./ScreenShots/Products.png)
 
-Click on product to read more about product details or add it to cart
+- **Click on product to read more about product details or add it to cart**
+  
 ![Product Detail](./ScreenShots/Product%20Detail.png)
 
-Add product to your cart by clicking on add to cart button. Also don't forget to select the quantity
+- **Add product to your cart by clicking on add to cart button. Also don't forget to select the quantity**
+
 ![Add-to-Cart](./ScreenShots/AddtoCart.png)
 
-You can also search for any product you want
+- **You can also search for any product you want**
+  
 ![Search](./ScreenShots/Seach.png)
 
-You can see all your products at one place in shopping cart and head for checkout
+- **You can see all your products at one place in shopping cart and head for checkout**
+  
 ![Shopping Cart](./ScreenShots/Shopping%20Cart.png)
 
-Checkout page will look like
+- **Checkout page will look like**
+  
 ![Checkout](./ScreenShots/Checkout.png)
 
-Confirmation for Order placed
+- **Confirmation for Order placed**
+  
 ![Order Placed](./ScreenShots/Order%20Success.png)
 
-Newsletter/Footer Section
+- **Newsletter/Footer Section**
+  
 ![Footer](./ScreenShots/Footer.png)
 
-Strapi Api acting as CMS for this website
+- **Strapi Api acting as CMS for this website**
+
 ![Strapi](./ScreenShots/Strapi%20Admin.png)
 
 ## License
