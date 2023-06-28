@@ -40,7 +40,7 @@ const Header = () => {
         <>
             <nav className="nav">
                 <div className="toggle-bar" id="nav_toggle">
-                    <HiOutlineMenuAlt2 onClick={showMenu()} />
+                    <HiOutlineMenuAlt2 onClick={showMenu} />
                 </div>
                 <div>
                     <Link to="" className="nav-logo">MangoZone</Link>
@@ -49,7 +49,6 @@ const Header = () => {
                     <ul className="nav-list">
                         <li className="list-item"><Link to="/" className="nav-link">Home</Link></li>
                         <li className="list-item"><Link to="/category/11" className="nav-link">Shop</Link></li>
-                        {/* <li className="list-item"><Link to="" className="nav-link">Categories</Link></li> */}
                         <li className="list-item"><Link to="/about" className="nav-link">About</Link></li>
                     </ul>
                 </div>

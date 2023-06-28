@@ -52,7 +52,7 @@ const Cart = ({setShowCart}) => {
                                 <span className="text total">&#8377; {cartTotal}</span>
                             </div>
                             <div className="btn">
-                                <button className="checkout-btn" onClick={()=>handlePayment()}>Checkout</button>
+                                <Link to="/checkout" className="checkout-btn" onClick={()=>setShowCart(false)}>Checkout</Link>
                             </div>
                         </div>
                     </> }

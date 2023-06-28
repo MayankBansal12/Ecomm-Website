@@ -15,13 +15,11 @@ const Home = () => {
 
     const getCategories=()=>{
         apiFetchData("/api/categories?populate=*").then(res=>{
-            // console.log(res.data)
             setCategories(res);
         });
     }
     const getProducts=()=>{
         apiFetchData("/api/products?populate=*").then(res=>{
-            // console.log(res.data)
             setProducts(res);
         });
     }
@@ -29,7 +27,7 @@ const Home = () => {
     return (
         <div>
             <Banner />
-            <div className="main-container">
+            <div className="main-container" id="shop">
                 <div className="layout">
                     <Category categories={categories} />
                     <Products heading="Popular Products" products={products} />

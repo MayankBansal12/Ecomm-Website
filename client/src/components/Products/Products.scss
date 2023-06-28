@@ -1,7 +1,7 @@
 @import "../../css-config/mixins.scss";
 
 .products-section{
-    margin: 5rem 0;
+    margin: 4rem 0;
     
     @include md{
         margin: 3rem 0;
@@ -20,7 +20,7 @@
             display: block;
             width: 5rem;
             height: 5px;
-            background-color: var(--highlight-color);
+            background-color: var(--first-color);
             border-radius: 1rem;
             margin: 0 auto;
             margin-top: 0.5rem;
