@@ -9,6 +9,8 @@ const AppContext=({children})=>{
     const [cartItem,setCartItem]=useState([]);
     const [count,setCount]=useState(0);
     const [cartTotal,setCartTotal]=useState(0);
+    const [showCart, setShowCart]=useState(false);
+    const [showSearch, setShowSearch]=useState(false);
     const location=useLocation();
 
     useEffect(()=>{
@@ -70,6 +72,10 @@ const AppContext=({children})=>{
             addToCart,
             removeCart,
             productQuantity,
+            showCart, 
+            setShowCart,
+            showSearch, 
+            setShowSearch,
             location
         }} >
             {children}

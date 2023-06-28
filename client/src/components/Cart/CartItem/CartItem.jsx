@@ -4,15 +4,20 @@ import { toast } from 'react-toastify';
 import CloseIcon from '@mui/icons-material/Close';
 import { Context } from "../../../utils/context";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CartItem = () => {
-    const {cartItem, removeCart, productQuantity}=useContext(Context);
+    const {cartItem, removeCart, productQuantity, setShowCart}=useContext(Context);
+    const navigate=useNavigate();
 
     return (
         <div className="cart-products">
             { cartItem.map((item)=>(
-                <div className="cart-product" key={item.id}>
-                    <div className="img-container">
+                <div className="cart-product" key={item.id} >
+                    <div className="img-container" onClick={()=>{
+                    navigate("/product/"+item.id);
+                    setShowCart(false);
+                }}>
                         <img src={process.env.REACT_APP_SERVER_URL+item.attributes.images.data[0].attributes.url} alt="product" />
                     </div>
                     <div className="product-details">

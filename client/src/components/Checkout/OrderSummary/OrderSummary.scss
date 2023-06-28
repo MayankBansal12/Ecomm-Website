@@ -69,5 +69,24 @@
                 }
             }
         }
+    }  
+    .btn{
+        margin-top: 2rem;
+        width: 200px;
+        text-align: center;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: var(--first-color);
+        color: white;
+        font-size: 1rem;
+        padding: 0.75rem;
+        transition: all 0.3s;
+        box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.3);
+        
+        &:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
     }
 }

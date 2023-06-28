@@ -59,33 +59,10 @@ const Footer = () => {
                     <li><Link target="_blank" className="icon" to="https://github.com/MayankBansal12"><GitHubIcon /></Link></li>
                     <li><Link target="_blank" className="icon" to="https://twitter.com/SimplerMayank"><TwitterIcon /></Link></li>
                 </ul>
-                <p className="copy-text">&copy; Copyright Mayank Bansal.</p>
+                <p className="copy-text">&copy; Copyright-ShopSense, Mayank Bansal.</p>
             </div>
         </div>
     );
 };
 
 export default Footer;
-
-            //     <footer>
-            //     <Link to="/" id="company-logo">MangoZone</Link>
-            //     <div className="footer-menu">
-            //         <p>
-            //             Your shopping palace and one stop solution to your needs and wants. Shop now and in case of any queries, write to us at
-            //             &nbsp;<Link className="email" to="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBptJQGXRhtBDKQrMSSBQSTpKJHXQDBCbfGrtBKSLFlmxgvsVkCZMGvnqcbrkMWtgDgcLrN" target="_blank">mayankbansal125@gmail.com</Link>
-            //         </p>
-            //         <div>
-            //             <ul>
-            //                 <li className="list-item"><Link to="">About</Link></li>
-            //                 <li className="list-item"><Link to="/">Contact</Link></li>
-            //                 <li className="list-item"><Link to="/">Blog</Link></li>
-            //                 <li className="list-item"><Link to="#newsletter">Sign up for Newsletter</Link></li>
-            //             </ul>
-            //             <ul className="socials">
-            //                 <li><Link target="_blank" className="icon" to="https://www.linkedin.com/in/mayank-bansal-b14837247/"><LinkedInIcon /></Link></li>
-            //                 <li><Link target="_blank" className="icon" to="https://github.com/MayankBansal12"><GitHubIcon /></Link></li>
-            //                 <li><Link target="_blank" className="icon" to="https://twitter.com/SimplerMayank"><TwitterIcon /></Link></li>
-            //             </ul>
-            //         </div>
-            //     </div>
-            // </footer>

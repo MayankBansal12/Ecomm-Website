@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
 import { BsCartFill } from "react-icons/bs";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 
 import "./Header.scss";
 import Cart from "../Cart/Cart";
@@ -10,9 +10,7 @@ import Search from "./Search/Search";
 import { Context } from "../../utils/context";
 
 const Header = () => {
-    const [showCart, setShowCart]=useState(false);
-    const [showSearch, setShowSearch]=useState(false);
-    const { count }=useContext(Context);
+    const { count,showCart, setShowCart, showSearch, setShowSearch }=useContext(Context);
 
     useEffect(()=>{
         window.addEventListener("scroll",()=>{
@@ -43,7 +41,7 @@ const Header = () => {
                     <HiOutlineMenuAlt2 onClick={showMenu} />
                 </div>
                 <div>
-                    <Link to="" className="nav-logo">MangoZone</Link>
+                    <Link to="" className="nav-logo">ShopSense</Link>
                 </div>
                 <div className="menu" id="nav-menu">
                     <ul className="nav-list">

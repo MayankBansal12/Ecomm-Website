@@ -1,16 +1,7 @@
 import "./Banner.scss";
 import banner from "../../../assets/banner2.jpg";
-import ScrollReveal from 'scrollreveal';
-import { useEffect } from "react";
 
 const Banner = () => {   
-    useEffect(()=>{
-        ScrollReveal().reveal('.reveal', {
-            delay: 200,
-            duration: 1000,
-            easing: 'ease-in-out',
-        });
-    })
     return (
         <div className="home">
             <div className="home-primary">
