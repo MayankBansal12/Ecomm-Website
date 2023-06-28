@@ -30,31 +30,31 @@ const Footer = () => {
                 <div className="footer-menu">
                     <h3>Categories</h3>
                     <ul>
-                        <li><Link to="#">SmartPhones</Link></li>
-                        <li><Link to="#">Grocery</Link></li>
-                        <li><Link to="#">Clothes, Garments, Shoes</Link></li>
-                        <li><Link to="#">Laptops, Tablets</Link></li>
-                        <li><Link to="#">Electronic Appliances</Link></li>
-                        <li><Link to="#">Food, Beverages</Link></li>
-                        <li><Link to="#">Watches, Wireless earphones</Link></li>
-                        <li><Link to="#">Others</Link></li>
+                        <li><Link to="/category/5">SmartPhones</Link></li>
+                        <li><Link to="/category/8">Grocery</Link></li>
+                        <li><Link to="/category/10">Clothes, Garments, Shoes</Link></li>
+                        <li><Link to="/category/6">Laptops, Tablets</Link></li>
+                        <li><Link to="/category/12">Electronic Appliances</Link></li>
+                        <li><Link to="/category/9">Food, Beverages</Link></li>
+                        <li><Link to="/category/7">Watches, Wireless earphones</Link></li>
+                        <li><Link to="/category/11">Others</Link></li>
                     </ul>
                 </div>
                 <div className="footer-menu">
                     <h3>Overview</h3>
                     <ul>
-                        <li><Link to="#">Your Orders</Link></li>
-                        <li><Link to="#">Sign up</Link></li>       
-                        <li><Link to="#">Careers</Link></li>    
-                        <li><Link to="#newsletter">Sign up for Newsletter</Link></li>                 
+                        <li><Link to="">Your Orders</Link></li>
+                        <li><Link to="">Sign up</Link></li>       
+                        <li><Link to="">Careers</Link></li>    
+                        <li><Link to="/">Sign up for Newsletter</Link></li>                 
                     </ul>
                 </div>
             </footer>
             <div id="sub-footer">
                 <ul>
-                    <li><Link to="#">Privacy Policy</Link></li>
-                    <li><Link to="#">Terms & Conditions</Link></li>
-                    <li><Link to="#">Security information</Link></li>
+                    <li><Link to="/about">Privacy Policy</Link></li>
+                    <li><Link to="/about">Terms & Conditions</Link></li>
+                    <li><Link to="/about">Security information</Link></li>
                     <li><Link target="_blank" className="icon" to="https://www.linkedin.com/in/mayank-bansal-b14837247/"><LinkedInIcon /></Link></li>
                     <li><Link target="_blank" className="icon" to="https://github.com/MayankBansal12"><GitHubIcon /></Link></li>
                     <li><Link target="_blank" className="icon" to="https://twitter.com/SimplerMayank"><TwitterIcon /></Link></li>
