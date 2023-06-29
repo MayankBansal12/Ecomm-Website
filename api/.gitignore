@@ -9,7 +9,6 @@ Icon
 .Spotlight-V100
 .Trashes
 ._*
-.env
 
 ############################
 # Linux
@@ -106,7 +105,6 @@ coverage
 # Strapi
 ############################
 
-.env
 license.txt
 exports
 *.cache
