@@ -21,8 +21,8 @@ ShopSense is a basic ecommerce web store that allows users to browse and purchas
 Before you begin, ensure that you have the following software installed on your system:
 
 - Node.js (version >= 14.x)
-- npm (Node Package Manager) or yarn
-- SQLite (depending on your database choice for Strapi)
+- npm (Node Package Manager) 
+- SQLite
 
 To run the ShopSense Ecommerce Project locally, follow these steps:
 
@@ -65,11 +65,9 @@ In case of any issues while installing, you can contact me.
 
 
 ## Screenshots/Demo
-
 You can watch the demo for website [here](https://clipchamp.com/watch/9vwDxLtP25g)
 
 - **HomePage for the website**
-  
 ![navbar](./ScreenShots/Navbar.png)
 ![navbar2](./ScreenShots/Nav2.png)
 
